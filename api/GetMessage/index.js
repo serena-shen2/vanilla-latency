@@ -11,14 +11,11 @@ module.exports = async function (context, req) {
         const responseTime = endTime - startTime;
         totalResponseTime += responseTime;
       })
-      .catch((err) => {
-        console.error(err);
-      });
   }
 
   const averageResponseTime = totalResponseTime / 100;
 
   context.res = {
-    body: { averageResponseTime },
+    body: { text: "Hello from the API0" },
   };
 };
