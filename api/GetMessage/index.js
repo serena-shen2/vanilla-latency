@@ -12,7 +12,10 @@ module.exports = async function (context, req) {
      })
     .catch((err) => {
       console.error(err);
-    });
+      context.res = {
+        status: 500,
+        body: { error: err.message },
+    };
       
   context.res = {
     body: { text: "Hello from the API0" },
