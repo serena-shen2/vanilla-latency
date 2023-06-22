@@ -3,18 +3,6 @@ module.exports = async function (context, req) {
 
   let totalResponseTime = 0;
 
-  for (let i = 0; i < 1; i++) {
-    const startTime = Date.now();
-    await fetch(url)
-      .then(() => {
-        const endTime = Date.now();
-        const responseTime = endTime - startTime;
-        totalResponseTime += responseTime;
-      })
-  }
-
-  const averageResponseTime = totalResponseTime / 100;
-
   context.res = {
     body: { text: "Hello from the API0" },
   };
