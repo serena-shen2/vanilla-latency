@@ -26,7 +26,7 @@ module.exports = async function (context, req) {
   try {
     const averageResponseTime = await testLatency(url, numAttempts);
     return {
-      body: `Average response time: ${averageResponseTime} ms`,
+      body: { text: Average response time: ${averageResponseTime} ms` },
     };
   } catch (err) {
     return {
