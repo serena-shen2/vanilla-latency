@@ -1,6 +1,5 @@
 module.exports = async function (context, req) {
 const https = require('https');
-let averageResponse = 0;
 
   function testLatency(url, numAttempts) {
   let totalResponseTime = 0;
@@ -11,14 +10,15 @@ let averageResponse = 0;
       const responseTime = endTime - startTime;
       totalResponseTime += responseTime;
       if (i === numAttempts - 1) {
-        averageResponse = totalResponseTime / numAttempts;
+        const averageResponse = totalResponseTime / numAttempts;
+          context.res = {
+            body: { text: `Average response time: ${averageResponse} ms` },
+          };
       }
     });
   }
 }
 
 testLatency('https://icy-grass-026a80e10.3.azurestaticapps.net/', 100);
-  context.res = {
-    body: { text: `Average response time: ${averageResponse} ms` },
-  };
+
 }
