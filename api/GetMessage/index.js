@@ -7,7 +7,8 @@ module.exports = async function (context, req) {
     const response = await fetch(url, {
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept', 
+         'Content-Type': 'application/json'
     });
     const content = await response.text();
     const end = Date.now();
