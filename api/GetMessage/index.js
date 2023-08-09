@@ -21,7 +21,7 @@ function testLatency(url, numAttempts) {
 }
 
 module.exports = async function (context, req) {
-  const url = 'https://icy-grass-026a80e10.3.azurestaticapps.net/';
+  const url = 'https://kind-coast-072dea922.1.azurestaticappscanary.net/';
   const numAttempts = 100;
   try {
     const averageResponseTime = await testLatency(url, numAttempts);
